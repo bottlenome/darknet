@@ -4,7 +4,7 @@ compiler:
   - clang
 before_install:
   - pip install --user cpp-coveralls
-install: make coverage
+install: DEBUG=1 make
 script:
   - wget http://pjreddie.com/media/files/yolo.weights && ./darknet yolo test cfg/yolo.cfg yolo.weights data/dog.jpg
 after_success:
