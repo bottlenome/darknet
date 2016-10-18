@@ -2,6 +2,10 @@ language: c
 compiler:
   - gcc
   - clang
-install: make
+before_install:
+  - pip install --user cpp-coveralls
+install: make coverage
 script:
   - wget http://pjreddie.com/media/files/yolo.weights && ./darknet yolo test cfg/yolo.cfg yolo.weights data/dog.jpg
+after_success:
+  - coveralls --gcov-options '\-lp'

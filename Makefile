@@ -17,7 +17,7 @@ COMMON=
 CFLAGS=-Wall -Wfatal-errors 
 
 ifeq ($(DEBUG), 1) 
-OPTS=-O0 -g
+OPTS=-O0 -g -coverage
 endif
 
 CFLAGS+=$(OPTS)
