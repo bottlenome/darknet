@@ -9,5 +9,7 @@ install: DEBUG=1 make
 script:
   - wget http://pjreddie.com/media/files/yolo.weights && ./darknet yolo test cfg/yolo.cfg yolo.weights data/dog.jpg
 after_success:
-  - lcov -c -d . -o coverage.info
+  - pwd
+  - ls
+  - lcov -c -d `pwd` -o coverage.info
   - lcoveralls coverage.info
