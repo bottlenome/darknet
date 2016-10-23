@@ -1,7 +1,8 @@
+#options
+#DEBUG=0
 GPU=0
 CUDNN=0
 OPENCV=0
-DEBUG=0
 
 ARCH= --gpu-architecture=compute_52 --gpu-code=compute_52
 
@@ -17,7 +18,7 @@ COMMON=
 CFLAGS=-Wall -Wfatal-errors 
 
 ifeq ($(DEBUG), 1) 
-OPTS=-O0 -g
+OPTS=-O0 -g -coverage
 endif
 
 CFLAGS+=$(OPTS)
