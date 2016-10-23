@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/bottlenome/darknet.svg?branch=master)](https://travis-ci.org/bottlenome/darknet)
-[![Build Status](https://travis-ci.org/bottlenome/darknet.svg?branch=master)](https://travis-ci.org/bottlenome/darknet)
+[![Coverage Status](https://coveralls.io/repos/github/bottlenome/darknet/badge.svg?branch=master)](https://coveralls.io/github/bottlenome/darknet?branch=master)
 ![Darknet Logo](http://pjreddie.com/media/files/darknet-black-small.png)
 
 #Darknet#
