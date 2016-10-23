@@ -11,5 +11,5 @@ script:
 after_success:
   - pwd
   - ls
-  - lcov -c -d `pwd` -o coverage.info
-  - lcoveralls coverage.info
+  - lcov -c -d . -b `pwd` -o coverage.info
+  - lcoveralls -r . coverage.info
