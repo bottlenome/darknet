@@ -3,6 +3,8 @@
 *.csv
 *.out
 *.png
+*.gcda
+*.gcno
 mnist/
 data/
 caffe/
