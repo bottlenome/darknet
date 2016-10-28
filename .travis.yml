@@ -13,4 +13,4 @@ script:
 after_success:
   - lcov -c -d obj -b `pwd` -o coverage.info 
   - lcoveralls -r . coverage.info
-  - coveralls --exclude tests --gcov-options '\-lp'
+  - coveralls -r . -b `pwd` --exclude tests --gcov-options '\-lp'
