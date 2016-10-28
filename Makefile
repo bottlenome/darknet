@@ -68,7 +68,7 @@ results:
 	mkdir -p results
 
 test: utils.o list.o
-	$(CXX) -o test_darknet ./test/api/test_utils.cc ./test/gtest/gtest-all.cc ./test/gtest/gtest_main.cc obj/utils.o obj/list.o -I test/ -I src/ $(OPTS) -lpthread
+	$(CXX) -o test_darknet ./tests/api/test_utils.cc ./tests/gtest/gtest-all.cc ./tests/gtest/gtest_main.cc obj/utils.o obj/list.o -I tests/ -I src/ $(OPTS) -lpthread
 
 .PHONY: clean check
 
