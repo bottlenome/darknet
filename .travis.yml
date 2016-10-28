@@ -10,5 +10,5 @@ script:
   - wget http://pjreddie.com/media/files/yolo.weights && ./darknet yolo test cfg/yolo.cfg yolo.weights data/dog.jpg
   - DEBUG=1 make check
 after_success:
-  - lcov -c -d obj -b `pwd` --no-external -o coverage.info 
+  - lcov -c -d obj -b `pwd` -o coverage.info 
   - lcoveralls -r . coverage.info
