@@ -11,7 +11,7 @@ EXEC=darknet
 OBJDIR=./obj/
 
 CC=gcc
-NVCC=nvcc
+NVCC=nvcc 
 OPTS=-Ofast
 LDFLAGS= -lm -pthread 
 COMMON= 
