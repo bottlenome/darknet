@@ -51,7 +51,7 @@ endif
 OBJS = $(addprefix $(OBJDIR), $(OBJ))
 DEPS = $(wildcard src/*.h) Makefile
 
-all: obj results $(EXEC)
+all: obj backup results $(EXEC)
 
 $(EXEC): $(OBJS)
 	$(CC) $(COMMON) $(CFLAGS) $^ -o $@ $(LDFLAGS)
@@ -64,6 +64,8 @@ $(OBJDIR)%.o: %.cu $(DEPS)
 
 obj:
 	mkdir -p obj
+backup:
+	mkdir -p backup
 results:
 	mkdir -p results
 
