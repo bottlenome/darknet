@@ -9,7 +9,7 @@
 
 #include "utils.h"
 
-int *read_map(char *filename)
+int *read_map(const char *filename)
 {
     int n = 0;
     int *map = 0;
@@ -21,6 +21,7 @@ int *read_map(char *filename)
         map = realloc(map, n*sizeof(int));
         map[n-1] = atoi(str);
     }
+    fclose(file);
     return map;
 }
 
@@ -45,6 +46,7 @@ void shuffle(void *arr, size_t n, size_t size)
         memcpy(arr+(j*size), arr+(i*size), size);
         memcpy(arr+(i*size), swp,          size);
     }
+    free(swp);
 }
 
 void del_arg(int argc, char **argv, int index)
