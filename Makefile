@@ -6,7 +6,7 @@ OPENCV=0
 
 ARCH= --gpu-architecture=compute_52 --gpu-code=compute_52
 
-VPATH=./src/
+VPATH=./src/ ./test/api
 EXEC=darknet
 OBJDIR=./obj/
 
@@ -67,7 +67,13 @@ obj:
 results:
 	mkdir -p results
 
-.PHONY: clean
+test: utils.o list.o
+	$(CXX) -o test_darknet ./tests/api/test_utils.cc ./tests/gtest/gtest-all.cc ./tests/gtest/gtest_main.cc obj/utils.o obj/list.o -I tests/ -I src/ $(OPTS) -lpthread
+
+.PHONY: clean check
+
+check: test
+	valgrind ./test_darknet
 
 clean:
 	rm -rf $(OBJS) $(EXEC)
